@@ -36,9 +36,7 @@ if (Astro.request.method === "POST") {
       tags: (formData.get("tags") as string).split(",").map((t) => t.trim()),
       author: {
         name: formData.get("authorName") as string,
-        avatar:
-          (formData.get("authorAvatar") as string) ||
-          "https://via.placeholder.com/40",
+        avatar: formData.get("authorAvatar") as string,
       },
       status: "published" as const,
       readTime: parseInt(formData.get("readTime") as string),
@@ -383,10 +381,11 @@ Puedes usar:
                 type="url"
                 id="authorAvatar"
                 name="authorAvatar"
-                placeholder="https://via.placeholder.com/40"
+                placeholder="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
               />
               <div class="help-text">
-                URL opcional, se usará placeholder por defecto
+                URL opcional del avatar del autor (recomendado: Unsplash o
+                similar)
               </div>
             </div>
           </div>

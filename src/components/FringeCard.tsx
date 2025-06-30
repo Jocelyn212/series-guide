@@ -84,13 +84,25 @@ export default function FringeCard({
         <div className="flex items-center space-x-4">
           {author && (
             <div className="flex items-center space-x-2">
-              {author.avatar && (
+              {author.avatar ? (
                 <img 
                   src={author.avatar} 
                   alt={author.name}
                   className="w-6 h-6 rounded-full"
+                  onError={(e) => {
+                    // Si la imagen falla, mostrar un avatar con iniciales
+                    e.currentTarget.style.display = 'none';
+                    const initials = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (initials) initials.style.display = 'flex';
+                  }}
                 />
-              )}
+              ) : null}
+              <div 
+                className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold"
+                style={{ display: author.avatar ? 'none' : 'flex' }}
+              >
+                {author.name.charAt(0).toUpperCase()}
+              </div>
               <span>{author.name}</span>
             </div>
           )}

@@ -18,7 +18,7 @@ if (!user || user.role !== "admin") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar Serie - Admin SeriesGuide</title>
-   
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-gray-900 min-h-screen">
     <div class="container mx-auto px-4 py-8">
@@ -351,20 +351,32 @@ if (!user || user.role !== "admin") {
 
     <script>
       // Auto-generar slug desde el título
-      document.getElementById("title").addEventListener("input", function (e) {
-        const title = e.target.value;
-        const slug = title
-          .toLowerCase()
-          .replace(/[^a-z0-9\s-]/g, "")
-          .replace(/\s+/g, "-")
-          .replace(/-+/g, "-")
-          .trim();
-        document.getElementById("slug").value = slug;
-      });
+      const titleInput = document.getElementById("title");
+      if (titleInput) {
+        titleInput.addEventListener("input", function (e) {
+          const target = e.target;
+          if (target && target instanceof HTMLInputElement) {
+            const title = target.value;
+            const slug = title
+              .toLowerCase()
+              .replace(/[^a-z0-9\s-]/g, "")
+              .replace(/\s+/g, "-")
+              .replace(/-+/g, "-")
+              .trim();
+
+            const slugInput = document.getElementById("slug");
+            if (slugInput && slugInput instanceof HTMLInputElement) {
+              slugInput.value = slug;
+            }
+          }
+        });
+      }
 
       // Función para mostrar alertas
-      function showAlert(message, type) {
+      function showAlert(message: string, type: string) {
         const alertContainer = document.getElementById("alertContainer");
+        if (!alertContainer) return;
+
         const alertClass = type === "success" ? "bg-green-500" : "bg-red-500";
 
         alertContainer.innerHTML =
@@ -376,39 +388,50 @@ if (!user || user.role !== "admin") {
 
         // Auto-ocultar después de 5 segundos
         setTimeout(function () {
-          alertContainer.innerHTML = "";
+          if (alertContainer) {
+            alertContainer.innerHTML = "";
+          }
         }, 5000);
       }
 
       // Manejar envío del formulario
-      document
-        .getElementById("serieForm")
-        .addEventListener("submit", function (e) {
+      const serieForm = document.getElementById("serieForm");
+      if (serieForm) {
+        serieForm.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          const formData = new FormData(e.target);
+          const form = e.target;
+          if (!(form instanceof HTMLFormElement)) return;
+
+          const formData = new FormData(form);
           const data = {
-            title: formData.get("title"),
-            slug: formData.get("slug"),
-            description: formData.get("description"),
-            genre: formData
-              .get("genre")
+            title: formData.get("title") || "",
+            slug: formData.get("slug") || "",
+            description: formData.get("description") || "",
+            genre: (formData.get("genre") || "")
+              .toString()
               .split(",")
               .map(function (g) {
                 return g.trim();
               }),
-            network: formData.get("network"),
-            startYear: parseInt(formData.get("startYear")),
+            network: formData.get("network") || "",
+            startYear: parseInt((formData.get("startYear") || "0").toString()),
             endYear: formData.get("endYear")
-              ? parseInt(formData.get("endYear"))
+              ? parseInt((formData.get("endYear") || "0").toString())
               : undefined,
-            totalSeasons: parseInt(formData.get("totalSeasons")),
-            totalEpisodes: parseInt(formData.get("totalEpisodes")),
-            status: formData.get("status"),
-            imdbId: formData.get("imdbId"),
-            imdbRating: parseFloat(formData.get("imdbRating")),
-            posterUrl: formData.get("posterUrl"),
-            backdropUrl: formData.get("backdropUrl"),
+            totalSeasons: parseInt(
+              (formData.get("totalSeasons") || "0").toString()
+            ),
+            totalEpisodes: parseInt(
+              (formData.get("totalEpisodes") || "0").toString()
+            ),
+            status: formData.get("status") || "",
+            imdbId: formData.get("imdbId") || "",
+            imdbRating: parseFloat(
+              (formData.get("imdbRating") || "0").toString()
+            ),
+            posterUrl: formData.get("posterUrl") || "",
+            backdropUrl: formData.get("backdropUrl") || "",
             platforms: [],
           };
 
@@ -425,8 +448,11 @@ if (!user || user.role !== "admin") {
             .then(function (result) {
               if (result.success) {
                 showAlert("¡Serie agregada exitosamente!", "success");
-                e.target.reset();
-                document.getElementById("slug").value = "";
+                form.reset();
+                const slugInput = document.getElementById("slug");
+                if (slugInput && slugInput instanceof HTMLInputElement) {
+                  slugInput.value = "";
+                }
               } else {
                 showAlert(
                   "Error agregando la serie: " +
@@ -440,41 +466,53 @@ if (!user || user.role !== "admin") {
               showAlert("Error de conexión al agregar la serie", "error");
             });
         });
+      }
 
       // Validación en tiempo real del año de fin
-      document
-        .getElementById("endYear")
-        .addEventListener("input", function (e) {
-          const startYear = parseInt(
-            document.getElementById("startYear").value
-          );
-          const endYear = parseInt(e.target.value);
+      const endYearInput = document.getElementById("endYear");
+      if (endYearInput) {
+        endYearInput.addEventListener("input", function (e) {
+          const target = e.target;
+          if (!(target instanceof HTMLInputElement)) return;
+
+          const startYearElement = document.getElementById("startYear");
+          if (!(startYearElement instanceof HTMLInputElement)) return;
+
+          const startYear = parseInt(startYearElement.value);
+          const endYear = parseInt(target.value);
 
           if (startYear && endYear && endYear < startYear) {
-            e.target.setCustomValidity(
+            target.setCustomValidity(
               "El año de fin no puede ser anterior al año de inicio"
             );
           } else {
-            e.target.setCustomValidity("");
+            target.setCustomValidity("");
           }
         });
+      }
 
       // Validación del año de inicio
-      document
-        .getElementById("startYear")
-        .addEventListener("input", function (e) {
-          const endYearInput = document.getElementById("endYear");
-          const startYear = parseInt(e.target.value);
-          const endYear = parseInt(endYearInput.value);
+      const startYearInput = document.getElementById("startYear");
+      if (startYearInput) {
+        startYearInput.addEventListener("input", function (e) {
+          const target = e.target;
+          if (!(target instanceof HTMLInputElement)) return;
+
+          const endYearElement = document.getElementById("endYear");
+          if (!(endYearElement instanceof HTMLInputElement)) return;
+
+          const startYear = parseInt(target.value);
+          const endYear = parseInt(endYearElement.value);
 
           if (startYear && endYear && endYear < startYear) {
-            endYearInput.setCustomValidity(
+            endYearElement.setCustomValidity(
               "El año de fin no puede ser anterior al año de inicio"
             );
           } else {
-            endYearInput.setCustomValidity("");
+            endYearElement.setCustomValidity("");
           }
         });
+      }
     </script>
   </body>
 </html>

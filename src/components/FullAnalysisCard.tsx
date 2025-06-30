@@ -98,13 +98,25 @@ export default function FullAnalysisCard({
         <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-gray-300">
           {author && (
             <div className="flex items-center space-x-2">
-              {author.avatar && (
+              {author.avatar ? (
                 <img 
                   src={author.avatar} 
                   alt={author.name}
                   className="w-8 h-8 rounded-full border-2 border-white/20"
+                  onError={(e) => {
+                    // Si la imagen falla, mostrar un avatar con iniciales
+                    e.currentTarget.style.display = 'none';
+                    const initials = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (initials) initials.style.display = 'flex';
+                  }}
                 />
-              )}
+              ) : null}
+              <div 
+                className="w-8 h-8 rounded-full border-2 border-white/20 bg-white/20 flex items-center justify-center text-sm font-bold"
+                style={{ display: author.avatar ? 'none' : 'flex' }}
+              >
+                {author.name.charAt(0).toUpperCase()}
+              </div>
               <span className="font-medium">{author.name}</span>
             </div>
           )}
