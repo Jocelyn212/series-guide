@@ -9,11 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   // Enable server-side rendering for API routes and dynamic content
   output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
+  adapter: vercel(),
 
   // Enable React to support React JSX components.
   integrations: [react()],
