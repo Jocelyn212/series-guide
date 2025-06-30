@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from "mongodb";
+/* import { MongoClient, ObjectId } from "mongodb";
 
 // Obtener la URI de MongoDB desde las variables de entorno
 const MONGODB_URI = import.meta.env.MONGODB_URI;
@@ -394,3 +394,4 @@ export async function getAnalisisBySerie(
     await client.close();
   }
 } 
+ */
