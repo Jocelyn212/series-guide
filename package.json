@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && ./fix-runtime.sh",
-    "build:vercel": "astro build && ./fix-runtime.sh",
     "preview": "astro preview",
-    "astro": "astro",
-    "populate-db": "node scripts/populate-db.js",
-    "quick-data": "node scripts/quick-data.js",
-    "full-database": "node scripts/full-database.js",
-    "add-modern-series": "node scripts/add-modern-series.js"
+    "check": "astro check",
+    "clean": "rm -rf .astro dist node_modules/.cache",
+    "db:populate": "node scripts/populate-db.js",
+    "db:quick": "node scripts/quick-data.js",
+    "db:full": "node scripts/full-database.js",
+    "db:modern": "node scripts/add-modern-series.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -28,8 +28,7 @@
     "mongodb": "^6.17.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@types/node": "^24.0.7"

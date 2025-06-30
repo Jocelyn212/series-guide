@@ -1,13 +1,57 @@
-# Astro + React Example
+# Series Guide Platform
 
-```sh
-npm create astro@latest -- --template framework-react
+Modern series analysis platform built with Astro, React, TypeScript, and MongoDB.
+
+## Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-react)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/framework-react)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/framework-react/devcontainer.json)
+## Environment Setup
 
-This example showcases Astro working with [React](https://react.dev).
+Create `.env` file:
 
-Write your React components as `.jsx` or `.tsx` files in your project.
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=your_secure_password
+```
+
+## Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm clean` - Clean cache files
+- `pnpm check` - Type check project
+- `pnpm db:populate` - Populate database
+- `./fix-vscode-cache.sh` - Fix VS Code TypeScript cache
+
+## Tech Stack
+
+- **Frontend**: Astro + React + TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: MongoDB
+- **Authentication**: JWT + bcryptjs
+- **Deployment**: Vercel
+
+## Project Structure
+
+```
+src/
+├── components/     # React components
+├── lib/           # Utilities (auth, mongo)
+├── pages/         # Astro pages & API routes
+└── styles/        # Global CSS
+```

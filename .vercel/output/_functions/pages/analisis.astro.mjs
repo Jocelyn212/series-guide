@@ -1,5 +1,4 @@
-import { c as createComponent, r as renderHead, f as renderComponent, a as renderTemplate } from '../chunks/astro/server_sybGnmsI.mjs';
-import 'kleur/colors';
+import { c as createComponent, r as renderHead, f as renderComponent, a as renderTemplate } from '../chunks/astro/server_CPsB3qD4.mjs';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 import { a as getAnalisis } from '../chunks/mongo_CASFip9t.mjs';

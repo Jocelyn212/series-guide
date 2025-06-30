@@ -1,5 +1,0 @@
-{
-  "framework": "astro",
-  "buildCommand": "npm run build:vercel",
-  "installCommand": "npm ci"
-}

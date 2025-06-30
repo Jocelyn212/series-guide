@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 
 // Obtener la URI de MongoDB desde las variables de entorno
-const MONGODB_URI = import.meta.env.MONGODB_URI;
+const MONGODB_URI = import.meta.env.MONGODB_URI as string;
 
 // Interfaces para la base de datos
 export interface Platform {

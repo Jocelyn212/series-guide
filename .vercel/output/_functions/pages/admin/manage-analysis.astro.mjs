@@ -1,6 +1,4 @@
-import { c as createComponent, b as createAstro, a as renderTemplate, e as addAttribute, r as renderHead } from '../../chunks/astro/server_sybGnmsI.mjs';
-import 'kleur/colors';
-import 'clsx';
+import { c as createComponent, b as createAstro, a as renderTemplate, e as addAttribute, r as renderHead } from '../../chunks/astro/server_CPsB3qD4.mjs';
 import { g as getServerAuthUser } from '../../chunks/auth_BB3BAWhE.mjs';
 import { a as getAnalisis } from '../../chunks/mongo_CASFip9t.mjs';
 /* empty css                                              */

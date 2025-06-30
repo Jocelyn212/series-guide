@@ -1,5 +1,4 @@
-import { c as createComponent, r as renderHead, f as renderComponent, a as renderTemplate } from '../chunks/astro/server_sybGnmsI.mjs';
-import 'kleur/colors';
+import { c as createComponent, r as renderHead, f as renderComponent, a as renderTemplate } from '../chunks/astro/server_CPsB3qD4.mjs';
 import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
 import { S as SerieCard } from '../chunks/SerieCard_CefSAgM8.mjs';
