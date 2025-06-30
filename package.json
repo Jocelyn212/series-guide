@@ -1,19 +1,29 @@
 {
-  "name": "fringe-guide",
+  "name": "series-guide",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "populate-db": "node scripts/populate-db.js",
+    "quick-data": "node scripts/quick-data.js",
+    "full-database": "node scripts/full-database.js",
+    "add-modern-series": "node scripts/add-modern-series.js"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "astro": "^5.10.1",
+    "mongodb": "^6.17.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.7"
   }
 }
