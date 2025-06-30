@@ -21,63 +21,63 @@
 		},
 		{
 			"src": "^/404/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/add-analysis/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/add-serie/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/manage-analysis/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/manage-series/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/update-images/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/admin/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/analisis/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/api/analysis/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/api/auth/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/api/series/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/login/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/series/([^/]+?)/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/series/?$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/$",
-			"dest": "_render"
+			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
 			"src": "^/.*$",

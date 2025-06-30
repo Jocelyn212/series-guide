@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && ./fix-runtime.sh",
+    "build:vercel": "astro build && ./fix-runtime.sh",
     "preview": "astro preview",
     "astro": "astro",
     "populate-db": "node scripts/populate-db.js",
