@@ -2,6 +2,7 @@
     "typescript.preferences.useAliasesForRenames": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.suggest.autoImports": true,
+    "typescript.preferences.includePackageJsonAutoImports": "on",
     "astro.typescript.enabled": true,
     "astro.typescript.allowArbitraryAttributes": false,
     "files.associations": {
@@ -16,10 +17,17 @@
     "editor.quickSuggestions": {
         "strings": true
     },
-    "typescript.preferences.includePackageJsonAutoImports": "on",
     "search.exclude": {
         "**/node_modules": true,
         "**/dist": true,
+        "**/.astro": true,
+        "**/.vercel": true
+    },
+    "files.exclude": {
+        "**/.vercel": true,
+        "**/dist": true,
         "**/.astro": true
-    }
+    },
+    "git.decorations.enabled": true,
+    "scm.diffDecorations": "gutter"
 }
