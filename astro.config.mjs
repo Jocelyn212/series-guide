@@ -2,20 +2,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel';
-
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // Enable server-side rendering for API routes and dynamic content
   output: 'server',
-  adapter: vercel({
-    isr: true
-  }),
-
-  // Enable React to support React JSX components.
+  adapter: vercel(),
   integrations: [react()],
-
   vite: {
     plugins: [tailwindcss()],
   },

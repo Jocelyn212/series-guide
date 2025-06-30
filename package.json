@@ -4,14 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build ",
+    "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "clean": "rm -rf .astro dist node_modules/.cache",
-    "db:populate": "node scripts/populate-db.js",
-    "db:quick": "node scripts/quick-data.js",
-    "db:full": "node scripts/full-database.js",
-    "db:modern": "node scripts/add-modern-series.js"
+    "clean": "rm -rf .astro dist node_modules/.cache"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

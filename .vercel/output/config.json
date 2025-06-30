@@ -21,63 +21,75 @@
 		},
 		{
 			"src": "^/404/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/add-analysis/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/add-serie/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/add-serie-new/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/index-new/?$",
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/manage-analysis/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/manage-analysis-new/?$",
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/manage-series/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/update-images/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/admin/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/analisis/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/api/analysis/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/api/auth/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/api/series/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/login/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/series/([^/]+?)/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/series/?$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/$",
-			"dest": "/_isr?x_astro_path=$0"
+			"dest": "_render"
 		},
 		{
 			"src": "^/.*$",

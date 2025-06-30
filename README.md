@@ -6,16 +6,13 @@ Modern series analysis platform built with Astro, React, TypeScript, and MongoDB
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Start development server
-pnpm dev
+npm run dev
 
 # Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
+npm run build
 ```
 
 ## Environment Setup
@@ -29,14 +26,14 @@ ADMIN_USERNAME=admin
 ADMIN_PASSWORD=your_secure_password
 ```
 
-## Scripts
+## Deploy to Vercel
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm clean` - Clean cache files
-- `pnpm check` - Type check project
-- `pnpm db:populate` - Populate database
-- `./fix-vscode-cache.sh` - Fix VS Code TypeScript cache
+1. **Push to GitHub**
+2. **Connect to Vercel**
+3. **Add environment variables in Vercel dashboard**
+4. **Deploy automatically**
+
+That's it! Vercel will handle everything automatically.
 
 ## Tech Stack
 
@@ -44,7 +41,7 @@ ADMIN_PASSWORD=your_secure_password
 - **Styling**: Tailwind CSS
 - **Database**: MongoDB
 - **Authentication**: JWT + bcryptjs
-- **Deployment**: Vercel
+- **Deployment**: Vercel (auto-configured)
 
 ## Project Structure
 
