@@ -2,9 +2,12 @@
     "typescript.preferences.useAliasesForRenames": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.suggest.autoImports": true,
-    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "typescript.preferences.includePackageJsonAutoImports": "off",
+    "typescript.validate.enable": true,
+    "typescript.format.enable": true,
     "astro.typescript.enabled": true,
-    "astro.typescript.allowArbitraryAttributes": false,
+    "astro.typescript.allowArbitraryAttributes": true,
+    "astro.format.newLineAfterFrontmatter": false,
     "files.associations": {
         "*.astro": "astro"
     },
@@ -17,16 +20,33 @@
     "editor.quickSuggestions": {
         "strings": true
     },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
     "search.exclude": {
         "**/node_modules": true,
         "**/dist": true,
         "**/.astro": true,
-        "**/.vercel": true
+        "**/.vercel": true,
+        "**/package-lock.json": true
     },
     "files.exclude": {
         "**/.vercel": true,
         "**/dist": true,
-        "**/.astro": true
+        "**/.astro": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true,
+        "**/*.tsbuildinfo": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        "**/.astro/**": true,
+        "**/dist/**": true,
+        "**/.vercel/**": true
     },
     "git.decorations.enabled": true,
     "scm.diffDecorations": "gutter"
