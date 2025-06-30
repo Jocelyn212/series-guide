@@ -1,0 +1,88 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/404/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/add-analysis/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/add-serie/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/manage-analysis/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/manage-series/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/update-images/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/analisis/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/api/analysis/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/api/auth/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/api/series/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/login/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/series/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/series/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/.*$",
+			"dest": "_render",
+			"status": 404
+		}
+	]
+}
