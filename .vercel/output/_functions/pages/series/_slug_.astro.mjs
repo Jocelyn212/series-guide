@@ -137,31 +137,13 @@ function FullAnalysisCard({
 }
 
 const $$Astro = createAstro();
-async function getStaticPaths() {
-  return [
-    { params: { slug: "fringe" } },
-    { params: { slug: "game-of-thrones" } },
-    { params: { slug: "stranger-things" } },
-    { params: { slug: "the-walking-dead" } },
-    { params: { slug: "wednesday" } },
-    { params: { slug: "la-casa-de-papel" } },
-    { params: { slug: "the-last-of-us" } },
-    { params: { slug: "house-of-the-dragon" } },
-    { params: { slug: "the-boys" } },
-    { params: { slug: "the-white-lotus" } },
-    { params: { slug: "the-mandalorian" } },
-    { params: { slug: "yellowjackets" } },
-    { params: { slug: "andor" } },
-    { params: { slug: "severance" } },
-    { params: { slug: "the-bear" } },
-    { params: { slug: "shogun" } },
-    { params: { slug: "reacher" } }
-  ];
-}
 const $$slug = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$slug;
   const { slug } = Astro2.params;
+  if (!slug) {
+    return Astro2.redirect("/404");
+  }
   const serie = await getSerieBySlug(slug);
   const analisis = await getAnalisisBySerie(slug);
   if (!serie) {
@@ -190,7 +172,6 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: $$slug,
   file: $$file,
-  getStaticPaths,
   url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
